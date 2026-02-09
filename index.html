@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ReelReview</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="styles.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="config.js"></script>
+</head>
+
+<body>
+
+<header>
+<h2>🎬 ReelReview</h2>
+<button onclick="logout()">Logout</button>
+</header>
+
+<div class="container">
+
+<div id="authBox">
+<h2>Login / Signup</h2>
+<input id="email" placeholder="Email">
+<input id="password" placeholder="Password" type="password">
+<button onclick="signup()">Signup</button>
+<button onclick="login()">Login</button>
+</div>
+
+<div id="dashboard" style="display:none">
+
+<h2>Dashboard</h2>
+
+<div class="card">
+<h3>Buy Credits</h3>
+<button onclick="buyCredits('starter')">$25 Pack</button>
+<button onclick="buyCredits('pro')">$99 Pack</button>
+<button onclick="buyCredits('studio')">$299 Pack</button>
+</div>
+
+<div class="card">
+<h3>Create Review Order</h3>
+<input id="movieTitle" placeholder="Movie Title">
+<input id="movieUrl" placeholder="Hosted Movie URL">
+<select id="tier">
+<option value="short">Short ($5 pay)</option>
+<option value="standard">Standard ($8 pay)</option>
+<option value="long">Long ($12 pay)</option>
+<option value="feature">Feature ($18 pay)</option>
+<option value="full">Full Movie ($25 pay)</option>
+</select>
+<button onclick="createOrder()">Submit Order</button>
+</div>
+
+<div class="card">
+<h3>Reviewer Queue</h3>
+<button onclick="loadQueue()">Load Available Reviews</button>
+<div id="queue"></div>
+</div>
+
+</div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
